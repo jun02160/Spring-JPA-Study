@@ -1,14 +1,22 @@
 package jjun.server.ch02jpastart1;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 회원 엔티티
+ */
 @Entity
 @Table(name="MEMBER")
 public class Member {
 
+    @Id
+    @Column(name = "id")
     private String id;
 
+    @Column(name = "NAME")
     private String username;
 
     private Integer age;

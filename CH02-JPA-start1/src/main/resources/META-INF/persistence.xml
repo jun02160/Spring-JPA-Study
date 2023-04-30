@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+<!-- XML 네임스페이스와 사용할 버전 지정 (여기서는 JPA 2.1을 사용) -->
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 
-    <persistence-unit name="jpabook">
+    <!-- JPA 설정 정보 : 영속성 유닛(persistence-unit)에서 시작 ➡️일반적으로 연결할 DB 당 하나의 영속성 유닛 등록 -->
+    <persistence-unit name="jpabook">  <!-- 영속성 유닛의 고유한 이름 부여 -->
 
+        <!-- JPA 구현체들은 엔티티 클래스를 자동으로 인식하지만, 환경에 따라 인식하지 못할 때도 있어 명시해주는 것이 좋다.(스프링, J2EE 환경에서는 엔티티 탐색 기능 제공) -->
+        <class>jjun.server.ch02jpastart1.Member</class>
         <properties>
 
             <!-- 필수 속성 -->
+            <!-- JPA 표준 속성 (JDBC 드라이버, DB 접속 아이디/비밀번호/URL) -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <!-- 하이버네이트 속성(DB 방언(dialect) 설정) ⭐️가장 중요! -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 
             <!-- 옵션 -->
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.use_sql_comments" value="true"/>
-            <property name="hibernate.id.new_generator_mappings" value="true"/>
+            <!-- 하이버네이트 전용 속성 -->
+            <property name="hibernate.show_sql" value="true"/>  <!-- 하이버네이트가 실행한 SQL 출력 -->
+            <property name="hibernate.format_sql" value="true"/>  <!-- 출력한 SQL을 보기 쉽게 정렬 -->
+            <property name="hibernate.use_sql_comments" value="true"/>  <!-- 쿼리 출력 시 주석도 함께 출력 -->
+            <property name="hibernate.id.new_generator_mappings" value="true"/>  <!-- JPA 표준에 맞춘 새로운 키 생성 전략 사용 -->
 
 <!--            <property name="hibernate.hbm2ddl.auto" value="create"/>-->
 
