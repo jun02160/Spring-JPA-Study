@@ -31,6 +31,7 @@ public class JpaMain {
             e.printStackTrace();
             tx.rollback();  // [트랜잭션] 예외 발생 시 트랜잭션 롤백
         } finally {
+            // 📍준영속 : 특정 엔티티를 영속성 컨텍스트에서 분리(em.detach(엔티티명);),  영속성 컨텍스트를 닫거나 초기화해도 준영속 상태가 된다.
             em.close();   // [엔티티 매니저] 종료
         }
 
@@ -43,11 +44,14 @@ public class JpaMain {
     private static void logic(EntityManager em) {
 
         String id = "id2";
+
+        // 📍비영속 : 객체를 생성한 상태
         Member member = new Member();
         member.setId(id);
         member.setUsername("박예준");
         member.setAge(20);
 
+        // 📍영속 : 객체를 저장한 상태 + em.find()/JPQL을 사용해서 조회한 엔티티도 영속 상태로 분류
         // 등록 'INSERT INTO MEMBER(ID, NAME, AGE) VALUES ('id1', '박예준', 20)
         em.persist(member);  // 엔티티 매니저 = 객체를 저장하는 '가상의 데이터베이스' ➡️ JPA는 엔티티가 저장되면 이 매핑 정보를 분석해 SQL을 만들고 DB에 전달한다.
 
@@ -63,6 +67,7 @@ public class JpaMain {
         List<Member> memberList = query.getResultList();  // 쿼리 객체의 결과 메소드 호출
         System.out.println("members.size = " + memberList.size());
 
+        // 📍삭제 : 객체를 삭제한 상태
         // 삭제 'DELETE FROM MEMBER WHERE ID='id1'
         em.remove(member);   // 삭제하려는 엔티티를 넘겨주면 JPA는 알아서 DELETE SQL을 생성하고 실행한다.
     }
