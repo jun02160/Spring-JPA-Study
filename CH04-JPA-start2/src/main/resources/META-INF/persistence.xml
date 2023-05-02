@@ -19,14 +19,14 @@
 
             <!-- 옵션 -->
             <!-- 하이버네이트 전용 속성 -->
-            <property name="hibernate.show_sql" value="true"/>  <!-- 하이버네이트가 실행한 SQL 출력 -->
+            <property name="hibernate.show_sql" value="true"/>  <!-- 하이버네이트가 실행한 SQL 출력 (테이블 생성 DDL도 확인 가능) -->
             <property name="hibernate.format_sql" value="true"/>  <!-- 출력한 SQL을 보기 쉽게 정렬 -->
             <property name="hibernate.use_sql_comments" value="true"/>  <!-- 쿼리 출력 시 주석도 함께 출력 -->
             <property name="hibernate.id.new_generator_mappings" value="true"/>  <!-- JPA 표준에 맞춘 새로운 키 생성 전략 사용 -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>  <!-- JPA는 데이터베이스 스키마를 자동으로 생성하는 기능을 지원 : 애플리케이션 실행 시점에 데이터베이스 테이블 자동 생성 -->
             
             <!-- 기본 매핑 이름 -->
-<!--            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>-->
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
         </properties>
     </persistence-unit>
 </persistence>

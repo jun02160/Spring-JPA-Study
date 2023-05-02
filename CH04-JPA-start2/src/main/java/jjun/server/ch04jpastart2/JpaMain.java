@@ -59,6 +59,6 @@ public class JpaMain {
         System.out.println("members.size = " + memberList.size());
 
         // 삭제 'DELETE FROM MEMBER WHERE ID='id1'
-        em.remove(member);   // 삭제하려는 엔티티를 넘겨주면 JPA는 알아서 DELETE SQL을 생성하고 실행한다.
+//        em.remove(member);   // 삭제하려는 엔티티를 넘겨주면 JPA는 알아서 DELETE SQL을 생성하고 실행한다.
     }
 }
