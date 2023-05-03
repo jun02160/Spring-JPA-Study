@@ -1,4 +1,4 @@
-package jjun.server.ch07model4.entity;
+package jjun.server.ch08model5.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter @Setter
 @Entity
-public class Member {
+public class Member extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "MEMBER_ID")

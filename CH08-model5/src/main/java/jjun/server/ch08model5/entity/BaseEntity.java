@@ -1,4 +1,4 @@
-package jjun.server.ch07model4.entity;
+package jjun.server.ch08model5.entity;
 
 import lombok.Getter;
 import lombok.Setter;

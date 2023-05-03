@@ -1,4 +1,4 @@
-package jjun.server.ch07model4.entity.Item;
+package jjun.server.ch08model5.entity.Item;
 
 import lombok.Getter;
 import lombok.Setter;

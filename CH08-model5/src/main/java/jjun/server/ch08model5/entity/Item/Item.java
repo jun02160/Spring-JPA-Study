@@ -1,6 +1,6 @@
-package jjun.server.ch07model4.entity.Item;
+package jjun.server.ch08model5.entity.Item;
 
-import jjun.server.ch07model4.entity.Category;
+import jjun.server.ch08model5.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
 

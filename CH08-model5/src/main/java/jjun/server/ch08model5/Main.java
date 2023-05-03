@@ -1,4 +1,4 @@
-package jjun.server.ch07model4;
+package jjun.server.ch08model5;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

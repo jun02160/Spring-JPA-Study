@@ -1,6 +1,6 @@
-package jjun.server.ch07model4.entity;
+package jjun.server.ch08model5.entity;
 
-import jjun.server.ch07model4.entity.Item.Item;
+import jjun.server.ch08model5.entity.Item.Item;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,11 +16,11 @@ public class OrderItem {
     private Long id;
 
     //== 연관관계 매핑 ==//
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ITEM_ID")
     private Item item;   // 주문 상품
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
     private Order order;     // 주문
 
