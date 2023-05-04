@@ -34,7 +34,7 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        if (this == 0) return true;
+        if (this.equals(0)) return true;
         if (!(o instanceof Address)) return false;
 
         Address address = (Address) o;
