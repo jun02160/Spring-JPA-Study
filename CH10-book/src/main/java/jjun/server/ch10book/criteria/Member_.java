@@ -1,4 +1,7 @@
-package jjun.server.ch10book;
+package jjun.server.ch10book.criteria;
+
+import jjun.server.ch10book.Member;
+import jjun.server.ch10book.Team;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.SingularAttribute;

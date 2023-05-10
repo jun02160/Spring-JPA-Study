@@ -1,4 +1,4 @@
-package jjun.server.ch10book;
+package jjun.server.ch10book.criteria;
 
 import javax.persistence.Tuple;
 import javax.persistence.criteria.CriteriaQuery;

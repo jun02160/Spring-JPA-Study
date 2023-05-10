@@ -1,9 +1,11 @@
-package jjun.server.ch10book;
+package jjun.server.ch10book.jpql;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
+
+import jjun.server.ch10book.jpql.UserDTO;
 
 public class JPQL {
 

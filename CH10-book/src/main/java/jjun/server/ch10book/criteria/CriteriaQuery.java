@@ -1,6 +1,4 @@
-package jjun.server.ch10book;
-
-import org.hibernate.sql.Select;
+package jjun.server.ch10book.criteria;
 
 import javax.persistence.criteria.AbstractQuery;
 import javax.persistence.criteria.Selection;

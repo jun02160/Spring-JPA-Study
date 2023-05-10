@@ -1,5 +1,7 @@
-package jjun.server.ch10book;
+package jjun.server.ch10book.jpql;
 
+import jjun.server.ch10book.Member;
+import jjun.server.ch10book.QMember;
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
 

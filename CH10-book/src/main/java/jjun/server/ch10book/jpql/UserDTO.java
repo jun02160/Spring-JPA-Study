@@ -1,4 +1,4 @@
-package jjun.server.ch10book;
+package jjun.server.ch10book.jpql;
 
 public class UserDTO {
 

@@ -1,4 +1,7 @@
-package jjun.server.ch10book;
+package jjun.server.ch10book.criteria;
+
+import jjun.server.ch10book.Member;
+import jjun.server.ch10book.Team;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Tuple;
@@ -20,7 +23,7 @@ public class Criteria {
 
         // 조회값 반환 타입: Object[]
         CriteriaQuery<Object[]> cq2 = cb.createQuery(Object[].class);
-        List<Object[]> resultList = em.createQuery(cq2).getResultList();
+        List<Object[]> resultList2 = em.createQuery(cq2).getResultList();
 
         // 조회값 반환 타입: Tuple
         CriteriaQuery<Tuple> cq3 = cb.createTupleQuery();
